@@ -1,0 +1,464 @@
+# Day 5 — Loops, Functions, Users/Groups/Sudo + Ubuntu SSH 🚀
+
+## Loops
+Loops are used to repeat commands automatically multiple times.
+
+---
+
+## For Loop
+
+### Syntax
+
+bash
+for variable in values
+do
+    commands
+done
+
+
+### Example
+
+bash
+#!/bin/bash
+
+for i in {1..5}
+do
+    echo $i
+done
+
+
+### Output
+
+bash
+1
+2
+3
+4
+5
+
+
+---
+
+## While Loop
+
+### Syntax
+
+bash
+while [ condition ]
+do
+    commands
+done
+
+
+### Example
+
+bash
+#!/bin/bash
+
+count=1
+
+while [ $count -le 5 ]
+do
+    echo $count
+    count=$((count+1))
+done
+
+
+### Output
+
+bash
+1
+2
+3
+4
+5
+
+
+### Important
+
+bash
+count=$((count+1))
+
+
+Used for incrementing value.
+
+---
+
+## Functions
+Functions help reuse code multiple times.
+
+---
+
+## Function Syntax
+
+bash
+function_name() {
+    commands
+}
+
+
+---
+
+## Simple Function Example
+
+bash
+#!/bin/bash
+
+greet() {
+    echo "Hello Siddu"
+}
+
+greet
+
+
+### Important
+
+✅ Correct:
+
+bash
+greet
+
+
+❌ Wrong:
+
+bash
+greet()
+
+
+Bash thinks you are redefining function again.
+
+---
+
+## Function With Parameters
+
+### Example
+
+bash
+#!/bin/bash
+
+welcome() {
+    echo "Welcome $1"
+}
+
+welcome Siddu
+welcome Rocky
+welcome Pranav
+
+
+### Output
+
+bash
+Welcome Siddu
+Welcome Rocky
+Welcome Pranav
+
+
+---
+
+## Function Inside Loop
+
+bash
+#!/bin/bash
+
+welcome() {
+    echo "Welcome $1"
+}
+
+for name in Siddu Rocky Pranav
+do
+    welcome $name
+done
+
+
+---
+
+## Users in Linux
+Linux is a multi-user operating system.
+
+Each user gets:
+- Own files
+- Own password
+- Own permissions
+- Own home directory
+
+Examples:
+- kali
+- ubuntu
+- root
+
+---
+
+## Why Multiple Users?
+Different users should have different permissions.
+
+Example:
+- Developers
+- Admins
+- Hackers 😭
+
+All should not get full system access.
+
+---
+
+## Important User Commands
+
+### whoami
+
+Shows current username.
+
+bash
+whoami
+
+
+---
+
+### id
+
+Shows:
+- user id
+- group id
+- permissions
+
+bash
+id
+
+
+---
+
+### cat /etc/passwd
+
+Database of Linux users.
+
+bash
+cat /etc/passwd
+
+
+---
+
+## Creating New User
+
+bash
+sudo adduser hacker
+
+
+### Meaning
+Creates new Linux user.
+
+---
+
+## Switching User
+
+bash
+su hacker
+
+
+### Meaning
+Switches into another user.
+
+---
+
+## Groups
+Groups help manage permissions easily.
+
+Instead of giving permissions one-by-one:
+- Create group
+- Add users into group
+
+---
+
+## Checking Groups
+
+bash
+groups
+
+
+Shows groups current user belongs to.
+
+---
+
+## Sudo
+
+### SUPER USER DO
+
+sudo gives temporary admin/root powers.
+
+---
+
+## Why sudo Exists?
+Normal users should not modify critical system files.
+
+Linux protects system using permissions.
+
+---
+
+## Example Without sudo
+
+bash
+apt update
+
+
+Might give:
+
+bash
+Permission denied
+
+
+---
+
+## Example With sudo
+
+bash
+sudo apt update
+
+
+Now command runs as admin.
+
+---
+
+## Root User
+
+Linux ultimate admin user:
+
+bash
+root
+
+
+Root can:
+- modify anything
+- delete anything
+- install anything
+
+Use carefully 😭🔥
+
+---
+
+## SSH (Secure Shell)
+
+SSH allows connecting one Linux machine to another remotely.
+
+Example:
+- Kali → Ubuntu
+
+---
+
+## Installing SSH Server
+
+bash
+sudo apt install openssh-server -y
+
+
+---
+
+## Checking SSH Service
+
+bash
+sudo systemctl status ssh
+
+
+If working:
+
+bash
+active (running)
+
+
+---
+
+## Checking IP Address
+
+bash
+ip a
+
+
+Look for:
+
+bash
+inet 10.x.x.x
+
+
+---
+
+## Connecting Through SSH
+
+From Kali:
+
+bash
+ssh username@ip-address
+
+
+Example:
+
+bash
+ssh vboxuser@10.91.171.183
+
+
+---
+
+## What I Did Today 
+
+✅ Installed Ubuntu Server  
+✅ Fixed boot/loading issues  
+✅ Learned loops  
+✅ Learned while loops  
+✅ Learned functions  
+✅ Learned function parameters  
+✅ Learned Linux users  
+✅ Learned groups  
+✅ Learned sudo  
+✅ Installed SSH server  
+✅ Connected Kali ↔️ Ubuntu using SSH  
+✅ Learned IP checking using ip a  
+✅ Practiced debugging and fixing errors  
+
+---
+
+## Commands Practiced Today
+
+bash
+for
+while
+echo
+whoami
+id
+groups
+sudo
+su
+cat
+ip a
+systemctl
+ssh
+
+
+---
+
+## Scripts Created Today
+
+bash
+forloop.sh
+whileloop.sh
+functions.sh
+welcome.sh
+
+
+---
+
+## Important Learnings 😎🔥
+
+- Loops automate repeated work
+- Functions reuse code
+- Users improve security
+- Groups simplify permissions
+- sudo gives temporary admin power
+- SSH enables remote Linux access
+- Debugging teaches real Linux skills
+
+---
+
+## Day 5 Status 🚀
+
+✅ Bash loops completed  
+✅ Functions completed  
+✅ Users/groups/sudo completed  
+✅ Ubuntu server setup completed  
+✅ SSH setup completed  
+✅ Kali ↔️ Ubuntu communication completed  
+✅ Real Linux admin practice started 🔥
