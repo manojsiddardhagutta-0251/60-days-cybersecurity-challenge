@@ -1,0 +1,39 @@
+## Reverse DNS Lookup
+
+### Meaning
+IP address ki hostname kanukovadam.
+
+Example:
+10.200.6.157
+→ hostname enti?
+
+---
+
+### Nmap Reverse DNS
+Command:
+nmap -R 192.168.1.0/24
+
+### Meaning of -R
+Force reverse DNS lookup.
+
+Nmap:
+- Every host ki hostname kanukodaniki try chestundi.
+
+### Drawback
+- Scan konchem slow avvachu.
+
+---
+
+## DNS Server Specification
+
+### Custom DNS Usage
+Command:
+nmap --dns-servers 8.8.8.8 target
+
+### Purpose
+Google DNS ni use chesi hostname lookup chestundi.
+
+### Why Use Custom DNS?
+- Faster lookups
+- Better hostname resolution
+- ISP DNS slow/unreliable avvachu
