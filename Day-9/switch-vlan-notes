@@ -1,0 +1,24 @@
+## Layer 3 Switch
+
+### Main Idea
+Layer 3 switch:
+- MAC addresses
+- IP addresses
+
+Rendu understand chestundi.
+
+### Result
+Konchem router laga behave chestundi.
+
+---
+
+## VLAN (Virtual Local Area Network)
+
+### Meaning
+One physical network ni:
+Multiple virtual separate networks laga split chestundi.
+
+### Benefits
+- Better security
+- Better organization
+- Traffic isolation
