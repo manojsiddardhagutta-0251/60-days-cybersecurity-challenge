@@ -1,0 +1,17 @@
+# Web Fundamentals Revision
+
+## Topics Revised
+- HTTP methods
+- Status codes
+- Cookies and sessions
+- Frontend vs Backend
+- Web servers
+- CDN
+- WAF
+- Databases
+
+## Key Learnings
+- Websites involve multiple backend components
+- Headers may leak useful information
+- Cookies maintain user sessions
+- Understanding web fundamentals is important for web security
