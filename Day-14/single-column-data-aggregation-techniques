@@ -1,0 +1,20 @@
+SQL Injection Single Column Data Aggregation Techniques
+When an application filter contains multiple columns, extracting assets is straightforward. However, when your vulnerability scanning isolates only a single text-friendly column, pulling data sequentially breaks the relational mapping. If you run multiple disjointed attempts, you lose the link that connects a specific user to their corresponding password hash.
+The Solution String Concatenation
+To bypass design layout constraints and extract multiple database variables simultaneously through a single text slot, we merge string fields using a unique custom separator character such as ~ or -.
+Inside Database: [administrator] (User) + [s3cure123] (Password)
+Merged Injected Output: administrator~s3cure123
+Cross Platform Syntax Blueprint
+Different relational database backends implement completely distinct operators to handle string concatenation:
+Oracle and PostgreSQL Double Pipe Matrix
+Uses the binary double-pipe || operator.
+' UNION SELECT username || '~' || password FROM users--
+MySQL Concatenation Function
+Uses the native built-in CONCAT() function loop.
+' UNION SELECT CONCAT(username, '~', password) FROM users--
+Note: Always ensure a space or trailing comment sequence follows the payload according to target filtering configurations.
+Microsoft SQL Server MS SQL
+Uses the standard arithmetic addition operator +.
+' UNION SELECT username + '~' + password FROM users--
+Core Hacking Takeaway
+CRITICAL RULE: Never forget to write the explicit text delimiter like '~' when crafting your extraction payloads. Without a clear delimiter, the data blocks will bleed together, making it impossible to separate a username from its password string cleanly during high-volume data collection.
